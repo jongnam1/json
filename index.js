@@ -3,7 +3,6 @@ let students = []
 
 const fetchStudent = () => {
   const url = "http://localhost:5500/students.json"
-
   //Todo: 위의 url을 사용하여 학생 목록을 가져오세요.
 
   //Todo: 가공된 학생 정보를 업데이트 하세요
