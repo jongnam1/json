@@ -1,0 +1,32 @@
+input,
+button {
+  outline: none;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  background-color: whitesmoke;
+}
+
+input:focus {
+  color: magenta;
+  background-color: white;
+  font-weight: 300;
+}
+
+input::placeholder {
+  color: lightgray;
+}
+button {
+  background-color: magenta;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+button:active {
+  opacity: 0.5;
+}
