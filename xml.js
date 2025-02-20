@@ -47,7 +47,6 @@ const targets = [
 ]
 
 let animals = []
-let page = 0
 const fetchAnimals = async (page) => {
   onLoading()
   const url = `${base_url}?serviceKey=${key}&numOfRows=20&pageNo=${
