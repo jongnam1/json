@@ -45,7 +45,7 @@ const fetchData = async () => {
 
 // }
 
-fetchData()
+// fetchData()
 
 const fetchFineDust = async () => {
   const url =
@@ -78,4 +78,54 @@ const fetchFineDust = async () => {
   document.body.append(ul)
 }
 
-fetchFineDust()
+// fetchFineDust()
+
+const imgUrl = "https://image.tmdb.org/t/p/w500"
+const api_key = "25db6ff26e8517fd46c2ee67944fa068"
+const apiUrl = "https://api.themoviedb.org/3/movie/popular"
+
+// fetchMovies
+
+const fetchMovies = async () => {
+  //! ? 를 써서 파라미터 값을 추가
+  //! 여러개의 파라미터를 추가할 때에는 하나의 파라미터 값이 끝난 자리에 & 쓴 뒤 추가하면 됨
+  //! 예) key === ?key=keyvalue
+  //! 파라미터이름=파라미터값
+
+  const url = `${apiUrl}?api_key=${api_key}` // api 공식문서 참고
+  const res = await fetch(url)
+
+  console.log(res)
+
+  //!res.status === 응답코드
+  //! 200대 성공
+  //! 400대 페이지를 찾을 수 없음 실패
+  //! 500대 에러 실패
+
+  if (!res.ok) {
+    return alert(res.statusText)
+  }
+
+  const data = await res.json()
+  console.log(data.results)
+
+  const ul = document.createElement("ul")
+
+  for (let item of data.results) {
+    const li = document.createElement("li")
+
+    li.innerHTML = `<p>제목: ${item.title}</p>
+                    <p>한줄평: ${item.overview}</p>
+                    <p>개봉일: ${item.release_date}</p>
+                    <img src=${imgUrl}${item.poster_path} alt=${item.title} />
+    `
+
+    ul.append(li)
+  } //? === forEach
+
+  document.body.append(ul)
+}
+
+// 호출하기
+
+fetchMovies()
