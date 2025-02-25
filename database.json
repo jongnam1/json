@@ -1,0 +1,24 @@
+{
+  "name": " ljn",
+  "age": 20,
+  "mobile": "012345678977",
+  "isStudent": null,
+  "users": [
+    {
+      "name": "user1",
+      "age": 30,
+      "mobile": "012341234"
+    },
+    {
+      "name": "user2",
+      "age": 31,
+      "mobile": "0123412345"
+    }
+  ],
+  "person": {
+    "name": "sas",
+    "age": 25,
+    "mobile": "1012354687",
+    "isAdult": false
+  }
+}
